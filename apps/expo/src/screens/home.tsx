@@ -1,13 +1,14 @@
 import React from "react";
 
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
-
+import { Button } from "native-base";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FlashList } from "@shopify/flash-list";
 import type { inferProcedureOutput } from "@trpc/server";
 import type { AppRouter } from "@acme/api";
 
 import { trpc } from "../utils/trpc";
+import type { Props } from "../types/navigation";
 
 const PostCard: React.FC<{
   post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
@@ -43,8 +44,7 @@ const CreatePost: React.FC = () => {
         onChangeText={onChangeContent}
         placeholder="Content"
       />
-      <TouchableOpacity
-        className="rounded bg-[#cc66ff] p-2"
+      <Button
         onPress={() => {
           mutate({
             title,
@@ -52,21 +52,21 @@ const CreatePost: React.FC = () => {
           });
         }}
       >
-        <Text className="font-semibold text-white">Publish post</Text>
-      </TouchableOpacity>
+        Click Me
+      </Button>
     </View>
   );
 };
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ navigation, route }: Props) => {
   const postQuery = trpc.post.all.useQuery();
   const [showPost, setShowPost] = React.useState<string | null>(null);
 
   return (
-    <SafeAreaView className="bg-[#2e026d] bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+    <SafeAreaView className="bg-[#00000]">
       <View className="h-full w-full p-4">
-        <Text className="mx-auto pb-2 text-5xl font-bold text-white">
-          Create <Text className="text-[#cc66ff]">T3</Text> Turbo
+        <Text className="mx-auto pb-2 text-5xl font-bold text-black">
+          Byte Learning
         </Text>
 
         <View className="py-2">
@@ -76,7 +76,7 @@ export const HomeScreen = () => {
               {showPost}
             </Text>
           ) : (
-            <Text className="font-semibold italic text-white">
+            <Text className="font-semibold italic text-black">
               Press on a post
             </Text>
           )}
