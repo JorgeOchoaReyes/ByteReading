@@ -82,7 +82,7 @@ export const HomeScreen = ({ navigation, route }: Props) => {
           )}
         </View>
 
-        <FlashList
+        {/* <FlashList
           data={postQuery.data}
           estimatedItemSize={20}
           ItemSeparatorComponent={() => <View className="h-2" />}
@@ -91,7 +91,7 @@ export const HomeScreen = ({ navigation, route }: Props) => {
               <PostCard post={p.item} />
             </TouchableOpacity>
           )}
-        />
+        /> */}
 
         <CreatePost />
       </View>
