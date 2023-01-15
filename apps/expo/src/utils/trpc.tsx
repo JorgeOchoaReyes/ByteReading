@@ -40,7 +40,9 @@ export const TRPCProvider: React.FC<{ children: React.ReactNode }> = ({
       transformer,
       links: [
         httpBatchLink({
-          url: `${getBaseUrl()}/api/trpc`,
+          url: __DEV__
+            ? `${getBaseUrl()}/api/trpc`
+            : "https://byte-reading-nextjs.vercel.app/api/trpc",
         }),
       ],
     }),
