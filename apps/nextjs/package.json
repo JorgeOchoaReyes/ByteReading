@@ -18,6 +18,7 @@
     "@acme/ui": "*",
     "@tanstack/react-query": "^4.16.1",
     "@trpc/client": "^10.1.0",
+    "moment-timezone": "0.5.40",
     "@trpc/next": "^10.1.0",
     "@trpc/react-query": "^10.1.0",
     "@trpc/server": "^10.1.0",

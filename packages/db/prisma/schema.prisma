@@ -16,6 +16,13 @@ model Post {
     content String
 }
 
+model Book {
+    id String @id @default(cuid())
+    title String 
+    pages Int
+    
+}
+
 // NextAuth.js Models
 // NOTE: When using postgresql, mysql or sqlserver, 
 // uncomment the @db.Text annotations below
