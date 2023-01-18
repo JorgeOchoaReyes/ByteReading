@@ -11,12 +11,7 @@ import { FlashList } from "@shopify/flash-list";
 export const HomeScreen = ({}: Props) => {
   return (
     <SafeAreaView className="h-full w-full bg-[#00000] px-4">
-      <Text className="border-t-2 border-gray-500 pb-2 text-2xl font-bold text-black">
-        Byte Learning
-      </Text>
-      <View className="flex flex-col border-t-2 border-gray-500 p-4"></View>
-
-      <ScrollView>
+      <ScrollView className="h-full w-full bg-[#00000] px-4">
         <Calendar
           markingType={"period"}
           markedDates={{
@@ -43,10 +38,11 @@ export const HomeScreen = ({}: Props) => {
           }}
           className="mb-5"
         />
-        <View className="h-full">
+        <View className="h-full w-full">
           <FlashList
             estimatedItemSize={50}
             data={[2, 4, 5, 6, 2]}
+            ItemSeparatorComponent={() => <View className="my-2" />}
             renderItem={({ item }) => (
               <ActivityCard
                 date={moment().format("YYYY-MM-DD")}
