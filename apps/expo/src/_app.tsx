@@ -6,23 +6,12 @@ import { TRPCProvider } from "./utils/trpc";
 import { NavigationContainer } from "@react-navigation/native";
 import { NativeBaseProvider } from "native-base";
 import { HomeScreen } from "./screens/home";
-
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { ReportsScreen } from "./screens/reports";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import type {
-  Props,
-  RootStackParamList,
-  tabBarIconType,
-} from "./types/navigation";
+import type { tabBarIconType } from "./types/navigation";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Tab = createBottomTabNavigator();
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
-
-function Home({ navigation, route }: Props) {
-  return <HomeScreen navigation={navigation} route={route} />;
-}
 
 export const App = () => {
   return (
@@ -37,15 +26,31 @@ export const App = () => {
                   tabBarIcon: ({ focused, color, size }: tabBarIconType) => {
                     return (
                       <Ionicons
-                        name={"home"}
+                        name={"analytics"}
                         size={size}
-                        color={focused ? "#F1A637" : color}
+                        color={focused ? "black" : color}
                       />
                     );
                   },
                 })}
-                name="Home"
+                name="Plan"
                 component={HomeScreen}
+              />
+              <Tab.Screen
+                options={({ navigation }: any) => ({
+                  headerShown: false,
+                  tabBarIcon: ({ focused, color, size }: tabBarIconType) => {
+                    return (
+                      <Ionicons
+                        name={"library"}
+                        size={size}
+                        color={focused ? "black" : color}
+                      />
+                    );
+                  },
+                })}
+                name="Books"
+                component={ReportsScreen}
               />
             </Tab.Navigator>
             <StatusBar />
