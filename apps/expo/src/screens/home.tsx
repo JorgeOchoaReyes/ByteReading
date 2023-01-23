@@ -10,8 +10,11 @@ import { FlashList } from "@shopify/flash-list";
 
 export const HomeScreen = ({}: Props) => {
   return (
-    <SafeAreaView className="h-full w-full bg-[#00000] px-4">
-      <ScrollView className="h-full w-full bg-[#00000] px-4">
+    <SafeAreaView
+      edges={["left", "right"]}
+      className="h-full w-full bg-[#00000] px-4"
+    >
+      <ScrollView className="mt-5 h-full w-full bg-[#00000]">
         <Calendar
           markingType={"period"}
           markedDates={{

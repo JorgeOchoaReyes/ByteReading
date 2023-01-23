@@ -2,7 +2,6 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { TRPCProvider } from "./utils/trpc";
-
 import { NavigationContainer } from "@react-navigation/native";
 import { NativeBaseProvider } from "native-base";
 import { HomeScreen } from "./screens/home";
@@ -19,10 +18,19 @@ export const App = () => {
       <NavigationContainer>
         <NativeBaseProvider>
           <SafeAreaProvider>
-            <Tab.Navigator>
+            <Tab.Navigator
+              screenOptions={{
+                headerShown: true,
+                headerStyle: {
+                  backgroundColor: "rgb(31 41 55)",
+                },
+                headerTitleStyle: {
+                  color: "white",
+                },
+              }}
+            >
               <Tab.Screen
-                options={({ navigation }: any) => ({
-                  headerShown: false,
+                options={({}) => ({
                   tabBarIcon: ({ focused, color, size }: tabBarIconType) => {
                     return (
                       <Ionicons
@@ -37,8 +45,7 @@ export const App = () => {
                 component={HomeScreen}
               />
               <Tab.Screen
-                options={({ navigation }: any) => ({
-                  headerShown: false,
+                options={({}) => ({
                   tabBarIcon: ({ focused, color, size }: tabBarIconType) => {
                     return (
                       <Ionicons
