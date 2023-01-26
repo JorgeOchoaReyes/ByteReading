@@ -87,7 +87,14 @@ export const Sidebar: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar
+        sx={{
+          "--tw-bg-opacity": 1,
+          backgroundColor: "rgb(31 41 55 / var(--tw-bg-opacity))",
+        }}
+        position="fixed"
+        open={open}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -99,7 +106,7 @@ export const Sidebar: React.FC<{ children: ReactNode }> = ({ children }) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+            Plan
           </Typography>
         </Toolbar>
       </AppBar>
@@ -112,32 +119,23 @@ export const Sidebar: React.FC<{ children: ReactNode }> = ({ children }) => {
             boxSizing: "border-box",
           },
         }}
-        variant="persistent"
         anchor="left"
         open={open}
       >
-        <DrawerHeader>
+        <DrawerHeader
+          sx={{
+            "--tw-bg-opacity": 1,
+            backgroundColor: "rgb(31 41 55 / var(--tw-bg-opacity))",
+          }}
+        >
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
+              <ChevronLeftIcon sx={{ color: "white" }} />
             ) : (
-              <ChevronRightIcon />
+              <ChevronRightIcon sx={{ color: "white" }} />
             )}
           </IconButton>
         </DrawerHeader>
-        <Divider />
-        <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
         <Divider />
         <List>
           {["All mail", "Trash", "Spam"].map((text, index) => (

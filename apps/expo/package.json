@@ -10,7 +10,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint . --ext ts,tsx",
-    "apk": "eas build --platform android --profile production"
+    "apk": "eas build --p android --profile preview"
   },
   "dependencies": {
     "@acme/api": "*",
