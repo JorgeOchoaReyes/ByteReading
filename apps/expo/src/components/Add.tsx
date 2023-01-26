@@ -1,5 +1,5 @@
 import React from "react";
-import { Fab, Center, Box, Icon } from "native-base";
+import { Fab, Icon } from "native-base";
 import { AntDesign } from "@expo/vector-icons";
 
 const Add: React.FC = () => {
