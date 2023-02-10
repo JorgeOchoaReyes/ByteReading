@@ -121,6 +121,7 @@ export const Sidebar: React.FC<{ children: ReactNode }> = ({ children }) => {
         }}
         anchor="left"
         open={open}
+        onClose={handleDrawerClose}
       >
         <DrawerHeader
           sx={{

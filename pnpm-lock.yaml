@@ -224,6 +224,7 @@ importers:
       '@types/react-calendar': 3.9.0
       '@types/react-dom': ^18.0.9
       eslint: ^8.28.0
+      moment-timezone: 0.5.40
       react: 18.1.0
       react-calendar: 4.0.0
       react-dom: 18.1.0
@@ -234,6 +235,7 @@ importers:
       '@emotion/styled': 11.10.5_g4vbhexlttif4tnic4xg4ustgq
       '@mui/icons-material': 5.11.0_ur5uveiuqpx6f6lsjgt5hhhhjq
       '@mui/material': 5.11.4_ud5z6bq6nw6f6o4anphvpjosn4
+      moment-timezone: 0.5.40
       react: 18.1.0
       react-calendar: 4.0.0_ef5jwxihqo6n7gxfmzogljlgcm
       react-dom: 18.1.0_react@18.1.0
